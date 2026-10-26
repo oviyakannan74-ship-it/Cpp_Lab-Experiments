@@ -1,39 +1,79 @@
 #include <iostream>
-#include <string>
 using namespace std;
-class Student
+class Shape
+{
+public:
+virtual float area() = 0; // Pure virtual function
+};
+
+class Circle : public Shape
 {
 private:
-int rollNo;
-string name;
+float radius;
 public:
-// Constructor
-
-Student(int r, string n)
+Circle(float r)
 {
-rollNo = r;
-name = n;
-cout << "Student object created" << endl;
+radius = r;
 }
-// Member function
-void display()
+float area()
 {
-cout << "Roll Number: " << rollNo << endl;
-cout << "Name: " << name << endl;
+return 3.14 * radius * radius;
 }
-// Destructor
-~Student()
+};
+class Rectangle : public Shape
 {
-cout << "Student object destroyed" << endl;
+private:
+float length, breadth;
+public:
+Rectangle(float l, float b)
+{
+length = l;
+breadth = b;
+}
+float area()
+{
+return length * breadth;
+}
+};
+class Triangle : public Shape
+{
+private:
+float base, height;
+public:
+Triangle(float b, float h)
+{
+base = b;
+height = h;
+}
+float area()
+{
+return 0.5 * base * height;
 }
 };
 int main()
 {
-Student s1(101, "Arun");
-Student s2(102,"Meera");
-Student s3(103,"Ashok");
-s1.display();
-s2.display();
-s3.display();
+Circle c(5);
+Rectangle r(4, 6);
+Triangle t(10, 8);
+
+Circle c2(3.5);
+Rectangle r2(7.5, 3);
+Triangle t2(6, 4);
+
+Shape *ptr;
+ptr = &c;
+cout << "Area of Circle: " << ptr->area() << endl;
+ptr = &r;
+cout << "Area of Rectangle: " << ptr->area() << endl;
+ptr = &t;
+cout << "Area of Triangle: " << ptr->area() << endl;
+cout<<endl;
+ptr = &c2;
+cout << "Area of Circle: " << ptr->area() << endl;
+ptr = &r2;
+cout << "Area of Rectangle: " << ptr->area() << endl;
+ptr = &t2;
+cout << "Area of Triangle: " << ptr->area() << endl;
+
 return 0;
 }
