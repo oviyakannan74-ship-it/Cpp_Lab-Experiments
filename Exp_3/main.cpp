@@ -92,6 +92,21 @@ int main()
     assert(product2[1][0] == 1);
     assert(product2[1][1] == 14);
 
+    Matrix E(1, 1, 0, 2);
+    Matrix F(3, 0, 1, 4);
+    Matrix sum3 = E + F;
+    Matrix product3 = E * F;
+
+    // Unit Tests for Test Case 3
+    assert(sum3[0][0] == 4);
+    assert(sum3[0][1] == 1);
+    assert(sum3[1][0] == 1);
+    assert(sum3[1][1] == 6);
+    assert(product3[0][0] == 4);
+    assert(product3[0][1] == 4);
+    assert(product3[1][0] == 2);
+    assert(product3[1][1] == 8);
+
     // Output results
     cout << "--- Test Case 1 Results ---" << endl;
     cout << "Matrix A:\n" << A;
@@ -104,6 +119,12 @@ int main()
     cout << "Matrix D:\n" << D;
     cout << "Addition (C + D):\n" << sum2;
     cout << "Multiplication (C * D):\n" << product2;
+
+    cout << "\n--- Test Case 3 Results ---" << endl;
+    cout << "Matrix E:\n" << E;
+    cout << "Matrix F:\n" << F;
+    cout << "Addition (E + F):\n" << sum3;
+    cout << "Multiplication (E * F):\n" << product3;
 
     cout << "\nAll unit tests passed successfully." << endl;
     return 0;
