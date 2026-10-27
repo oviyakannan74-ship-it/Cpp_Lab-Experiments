@@ -60,6 +60,10 @@ Circle c2(3.5);
 Rectangle r2(7.5, 3);
 Triangle t2(6, 4);
 
+Circle c3(2);
+Rectangle r3(5, 5);
+Triangle t3(4, 3);
+
 Shape *ptr;
 ptr = &c;
 cout << "Area of Circle: " << ptr->area() << endl;
@@ -73,6 +77,12 @@ cout << "Area of Circle: " << ptr->area() << endl;
 ptr = &r2;
 cout << "Area of Rectangle: " << ptr->area() << endl;
 ptr = &t2;
+cout << "Area of Triangle: " << ptr->area() << endl;
+ptr = &c3;
+cout << "Area of Circle: " << ptr->area() << endl;
+ptr = &r3;
+cout << "Area of Rectangle: " << ptr->area() << endl;
+ptr = &t3;
 cout << "Area of Triangle: " << ptr->area() << endl;
 
 return 0;
